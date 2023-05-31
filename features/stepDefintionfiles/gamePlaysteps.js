@@ -12,6 +12,7 @@ const lobbypage = require('../../pages/lobbypage')
 const setchatName = require('../../pages/setchatName')
 const inRoompage = require('../../pages/inRoompage')
 const betHistorypage = require('../../pages/betHistorypage')
+const logoutPage = require ('../../pages/logoutPage')
 
 'use strict';
 
@@ -171,6 +172,17 @@ var gameWaitTime;
                        Then('user winnings are displayed on Bet history', async function () {
                          await betHistorypage.betHistoryContent(GameID);
                        });
+
+                       When('user nevigate to the client and click on logout button', async function(){
+                        await logoutPage.logout();
+
+                       });
+
+                       Then ('Then user is logged out', async function(){
+                        await logoutPage.UserLoggedOut();
+                       });
+
+                  
               
 
 
