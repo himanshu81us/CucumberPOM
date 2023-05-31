@@ -25,7 +25,7 @@ Scenario Outline: GamePlay
     When the bet history is opened with gameid
     Then Bet history page is displayed
     And user winnings are displayed on Bet history 
-    when user nevigate to the client and click on logout button 
+    When user nevigate to the client and click on logout button 
     Then user is logged out
 
      Examples:
