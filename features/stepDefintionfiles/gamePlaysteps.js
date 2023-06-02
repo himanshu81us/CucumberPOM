@@ -21,6 +21,7 @@ var userAfterStakeBalance;
 var userAfterGameBalance;
 var GameID;
 var gameWaitTime;
+var user;
 
 
     

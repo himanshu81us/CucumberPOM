@@ -11,6 +11,7 @@ var submitButton_xpath =`//button[@id='setdisplayname-btn-submit']`
 var SchedulePage_xpath =`//div[@class='scheduleTabs']`
 var SchedulePageClose_xpath = `//div[@class='closeButtonContainer']//div[@class='icon closeButton']`
 var ScheduleIcon_xpath = `//div[@class='icon schedule']`
+const confirmButton_xpath = `//button[@class='dialogButton confirmButton']`;
 
 var headerLobbyIcon_xpath = `//*[@id="topBar"]/nav[1]/div[2]/span`
 
@@ -47,7 +48,7 @@ async registerChatNameInRoom(roomName){
     await driver.findElement(By.css(EnterchatNamecss)).sendKeys(user);
     await driver.findElement(By.xpath("//button[@id='setdisplayname-btn-submit']")).click();
     driver.sleep(3000);
-    await driver.findElement(By.xpath(headerLobbyIcon_xpath)).click();
+   // await driver.findElement(By.xpath(headerLobbyIcon_xpath)).click();
   
 
 }
@@ -55,7 +56,16 @@ async registerChatNameInRoom(roomName){
 async clickLobbyIcon(){
     driver.sleep(3000);
     await driver.findElement(By.xpath(headerLobbyIcon_xpath)).click();
+    const confirmbuttonElement = await driver.findElement(By.xpath(confirmButton_xpath)).isDisplayed();
+
+    if(confirmbuttonElement == true){
+        await driver.findElement(By.xpath(confirmButton_xpath)).click();
+    }
+    else{
+        console.log("I am able to navigate back to Lobby")
+    }
 }
+
 
 }
 

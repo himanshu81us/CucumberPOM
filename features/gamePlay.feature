@@ -28,9 +28,13 @@ Scenario Outline: GamePlay
     When user nevigate to the client and click on logout button 
     Then user is logged out
 
-     Examples:
+    Examples:
     | siteUrl | variant  | 
     |-skybingo.virtuefusion.com/bingo/lobby|Clover Rollover Bingo|
+    #|.play.meccabingo.com/bingo/lobby|Loose Women|
+   # |-skybingo.virtuefusion.com/bingo/lobby|Mystical Bingo|
+      |.play.meccabingo.com/bingo/lobby|Emoji Bingo|
+   
    
 
  

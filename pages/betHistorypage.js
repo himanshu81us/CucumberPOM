@@ -75,9 +75,10 @@ class betHistorypage{
         const gamePlayedId_xpath = `//a[@class="historyLink" and contains(text(), "${GameID}")]`;
 
         await driver.findElement(By.xpath(gamePlayedId_xpath)).click();
-        // const bHContentElement  = await driver.findElement(By.css(betHistoryTable_css));
-        // const bHContent = await bHContentElement.getText();
-        // return bHContent;
+        await driver.switchTo().frame('transactionIFrame');
+        const bHContentElement  = await driver.findElement(By.css(betHistoryTable_css));
+         const bHContent = await bHContentElement.getText();
+         return bHContent;
 
         
 
