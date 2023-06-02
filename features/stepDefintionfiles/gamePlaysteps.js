@@ -69,7 +69,9 @@ var gameWaitTime;
                        });
              
               
-                       Then('chatname of the user is set', {timeout:20*1000}, async function () {
+                       Then('chatname of the user is set', async function () {
+                        await inRoompage.acceptWelcomeMessage();
+                        await setchatName.clickLobbyIcon();
                         let result = await lobbypage.isLobbyDisplayed();
                         console.log("User is on the Lobby " +result);
                         assert(result, 'true');
