@@ -9,7 +9,6 @@ var LoginButton_xpath = `//div[@class='icon login']`;
 
 
 
-
 class logoutPage {
 
     async logout (){
